@@ -6,6 +6,7 @@ import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
 contract NFTMarketplace is ERC721URIStorage, Ownable {
+    
     uint256 private _tokenIds;
     uint256 private _listingFee = 0.01 ether;
     uint256 private _mintingFee = 0.05 ether;
@@ -17,7 +18,6 @@ contract NFTMarketplace is ERC721URIStorage, Ownable {
         bool isListed;
     }
 
-    // Mapping from token ID to its listedNFT
     mapping(uint256 => ListedNFT) public listings;
 
     event NFTMinted(uint256 tokenId, address owner, string tokenURI);
@@ -75,7 +75,6 @@ contract NFTMarketplace is ERC721URIStorage, Ownable {
 
         emit NFTSold(tokenId, msg.sender, listing.price);
     }
-
 
     function getListingFee() public view returns (uint256) {
         return _listingFee;
