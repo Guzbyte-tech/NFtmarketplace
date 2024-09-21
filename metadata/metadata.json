@@ -1,0 +1,16 @@
+{
+    "name": "My NFT Title",
+    "description": "A brief description of the NFT.",
+    "image": "http://localhost:8000/images/GUZNFT.JPG",
+    "attributes": [
+      {
+        "trait_type": "Color",
+        "value": "Blue"
+      },
+      {
+        "trait_type": "Size",
+        "value": "Large"
+      }
+    ]
+  }
+  
