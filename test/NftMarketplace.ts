@@ -11,7 +11,7 @@ import {
 
     const LISTING_FEE = ethers.parseEther("0.01");
     const MINTING_FEE = ethers.parseEther("0.05");
-    const tokenURI = "http://localhost:8000/metadata/metadata.json" //Hosted Locally.
+    const tokenURI = "http://localhost:8000/metadata/metadata.json"
 
     async function deployTeam47GangNFT() {
         const [ nftDeployer ] = await ethers.getSigners();
@@ -39,6 +39,7 @@ import {
 
 
     describe("MINT NFT", function(){
+        
         it("Should mint nft successfully.", async function(){
             const {nftMart, marketOwner, seller, buyer} = await loadFixture(deployMarketPlace);
             await nftMart.connect(seller).mintNFT(tokenURI, {value: MINTING_FEE})
@@ -88,7 +89,4 @@ import {
             })).to.be.revertedWith("Insufficient payment");
         });
     });
-
-
-
   });
